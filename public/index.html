@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Jukebox for the Saloon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>A Jukebox for the Saloon</h1>
+  </header>
+
+  <main>
+
+    <section id="now-playing">
+      <h2>Now Playing</h2>
+      <img id="artwork" src="" alt="Album artwork">
+      <audio id="audio-player"></audio>
+      <p id="current-title">No song playing</p>
+      <p id="current-artist"></p>
+
+      <div id="controls">
+        <button id="play-pause-btn">Play</button>
+        <button id="skip-btn">Skip</button>
+      </div>
+
+      <input type="range" id="progress-bar" value="0" min="0" max="100">
+      <input type="range" id="volume-slider" value="50" min="0" max="100">
+    </section>
+
+    <section id="queue-section">
+      <h2>Up Next</h2>
+      <ul id="queue-list">
+        <li>The queue is empty.</li>
+      </ul>
+      <input type="text" id="requester-name" placeholder="Your name (optional)">
+      <button id="add-song-btn">Request a Song</button>
+      <ul id="song-picker-list" class="hidden"></ul>
+    </section>
+
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

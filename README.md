@@ -1,63 +1,71 @@
 # A jukebox for the Saloon
 
-It is a shared web jukebox for the saloon. Everyone pens the same site, add songs to one queue and the music plays in the browse. Built for the HackClub Pixel YSWS trial.
+A shared web jukebox where everyone in the saloon can request songs, manage one shared queue, and listen to the same music together in the browser.
+
+## Description
+
+A Jukebox for the Saloon is a web-based shared music player built for the Hack Club Pixel YSWS trial. Everyone opens the same website and can add songs from the available library to a shared queue. The current song, queue, playback state, and other controls stay synchronized between connected devices using real-time communication. The project has a Wild West saloon theme and is designed to work on both desktop and mobile devices.
 
 **Live demo:** https://jukebox.sushant-vats.hackclub.app
 
 ## Screenshots
 
-![Two device in sync](screenshots/synced.png)
+![Two devices in sync](screenshots/synced.png)
 ![Mobile view](screenshots/mobile.jpeg)
 
-## What it does
+# Getting Started
 
-- You can request a song from the library and attach your name to it.
-- It shows the current song playing with the artwork, artist and who requested it.
-- It has one shared queue that everyone can see.
-- It has Play, Pause, Skip, Seek and Volume controls.
-- You can also remove song from the queue.
-- The next song automatically starts when the previous one ends.
-- The theme is Wild West saloon and it works on mobile too.
+## Dependencies
+- npm
+- A modern web browser
+- Internet connection for the live version
+- Works on Windows, macOS, and Linux
 
-## What is Synced between devices
+## Installing
 
-- The queue and the current song
-- Requester names
-- Play and pause
-- Playback position and seeking
-- Skip
+1. Clone or download the project from GitHub.
+2. Open the project folder in VS Code or another code editor.
+3. Open a terminal inside the project folder.
+4. Install the required packages:
 
-A song only advance once, even when many people are connected.
-
-## What is not synced
-- **Volume** is per devices, so each person controls their own speaker.
-- **Each device has to "Tap to join the music once**, because browser block audio until you interact with the page.
-
-## Limitations 
-
-- The queue is kept in the server's memory, so it resests if the server restarts.
-- There is no login, so anyone can skip or remove songs.
-- The songs come from a fixed library, not a search of all music.
-
-## Tech Stack
-
-- **Frontent:** HTML, CSS, vanilla Javascript
-- **Backend:** Node.js, Express
-- **Real-time sync:** Socket.I0
-- **Hosting:** Hack Club Nes, kept running with pm2
-
-## Running Locally
-
-```
 npm install
+
+No additional configuration is required for the basic local version.
+
+## Executing program
+
+1. Open the project folder in your terminal.
+2. Start the server:
+
 node server.js
-```
-Then open `http://localhost:3000` in your browser.
 
-## Audio
+3. Open your browser.
+4. Go to:
 
-All songs and artwork used here are royalty-free & sourced for this project as sample tracks to demonstrate playback functionality.
+http://localhost:3000
 
-## Built By
+5. Open the same address on another device if you want to test the real-time synchronization.
+6. On each device, press "Tap to Join Music" once to allow the browser to play audio.
 
-Sushant - as a Hack Club YSWS trial project.
+# Help
+
+## Common problems
+1. The music does not start
+
+Make sure you have clicked "Tap to Join Music". Browsers usually block audio playback until the user interacts with the page.
+
+2. The queue is not syncing
+
+Make sure both devices are connected to the same running server and have a stable internet/network connection.
+
+3. The queue disappeared
+
+The queue is stored in the server's memory, so it resets whenever the server restarts.
+
+4. Someone skipped or removed a song
+
+There is currently no login or permission system, so anyone connected to the jukebox can use the queue controls.
+
+# License
+
+This project is made by Sushant for HackClub Pixel YSWS program!
